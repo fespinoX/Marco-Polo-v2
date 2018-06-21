@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
 			'name' => 'Kodos',
 			'email' => 'kodos@laika.com',
 			'planeta' => 'Rigel VII',
-			'foto' => 'img/profile/kodos.jpg',
+			'foto' => 'imgs/kodos.jpg',
 			'password' => \Hash::make('1234'),
 			'id_rol'=>1
 		]);
@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
 			'name' => 'Alf',
 			'email' => 'alf@laika.com',
 			'planeta' => 'Melmac',
-			'foto' => 'img/profile/alf.jpg',
+			'foto' => 'imgs/alf.jpg',
 			'password' => \Hash::make('1234'),
 			'id_rol'=>2
 		]);
@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder
 			'name' => 'E.T.',
 			'email' => 'et@laika.com',
 			'planeta' => 'Home',
-			'foto' => 'img/profile/et.jpg',
+			'foto' => 'imgs/et.jpg',
 			'password' => \Hash::make('1234'),
 			'id_rol'=>2
 		]);
@@ -41,7 +41,7 @@ class UsersTableSeeder extends Seeder
 			'name' => 'Yoda',
 			'email' => 'yoda@laika.com',
 			'planeta' => 'Dagobah',
-			'foto' => 'img/profile/yoda.jpg',
+			'foto' => 'imgs/yoda.jpg',
 			'password' => \Hash::make('1234'),
 			'id_rol'=>2
 		]);
@@ -49,7 +49,7 @@ class UsersTableSeeder extends Seeder
 			'name' => 'Kal-El',
 			'email' => 'superman@laika.com',
 			'planeta' => 'Krypton',
-			'foto' => 'img/profile/superman.jpg',
+			'foto' => 'imgs/superman.jpg',
 			'password' => \Hash::make('1234'),
 			'id_rol'=>2
 		]);
@@ -57,7 +57,7 @@ class UsersTableSeeder extends Seeder
 			'name' => 'Spock',
 			'email' => 'spock@laika.com',
 			'planeta' => 'Vulcano',
-			'foto' => 'img/profile/spock.jpg',
+			'foto' => 'imgs/spock.jpg',
 			'password' => \Hash::make('1234'),
 			'id_rol'=>2
 		]);	
@@ -65,7 +65,7 @@ class UsersTableSeeder extends Seeder
 			'name' => 'Thomas Jerome Newton',
 			'email' => 'tjn@laika.com',
 			'planeta' => 'Anthea',
-			'foto' => 'img/profile/tjn.jpg',
+			'foto' => 'imgs/tjn.jpg',
 			'password' => \Hash::make('1234'),
 			'id_rol'=>2
 		]);	

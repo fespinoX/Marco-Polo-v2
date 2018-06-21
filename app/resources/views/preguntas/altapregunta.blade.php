@@ -18,7 +18,7 @@ Preguntame!
           <input type="hidden" name="id" value="{{Auth::user()->id}}">
           <input type="hidden" name="respondida" id="respondida">
           <div class="form-group">
-            <label for="pregunta">Pregunta</label>
+            <label for="pregunta" class="pregunta">Pregunta</label>
             <textarea name="pregunta" id="pregunta" cols="30" rows="10">{{ old('pregunta') }}</textarea>
             @if($errors->has('pregunta'))
             <div class="alert alert-danger">{{ $errors->first('pregunta') }}</div>

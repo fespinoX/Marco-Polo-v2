@@ -20,3 +20,7 @@ Marco Polo
 	</div>
 </section>
 @stop
+
+<?php
+echo Git::commits();
+?>

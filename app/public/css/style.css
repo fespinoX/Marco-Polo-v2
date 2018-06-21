@@ -44,6 +44,12 @@ h1{
     top: 8px;    
 }
 
+.navbar .notsorighty {
+    position: absolute;
+    right: 75px;
+    top: 8px;    
+}
+
 .navbar-brand {
     font-family: 'space_comicsregular';
     font-size: 16px;
@@ -56,7 +62,7 @@ h1{
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #E7D7B3;
+    color: #038D80!important;
     font-size: 18px;
     font-weight: 600;
 }
@@ -74,7 +80,14 @@ textarea {
     border-radius: .25rem;
 }
 
+.campito {
+    resize: none;
+    border: none;
+    border-radius: .25rem;    
+}
+
 .btn {
+    width: auto;
     font-size: 20px;
     margin: 20px 10px;
     background-color: #038D80;
@@ -148,6 +161,22 @@ textarea {
 }
 
 #login h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* REGISTER */
+
+#register {
+    background-image: url('../img/bg-login.jpg');
+}
+
+#register .register {
+    margin-top: 100px;
+}
+
+#register h2 {
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
@@ -284,4 +313,51 @@ textarea {
 #edit .formu .pregunta{
     color: #E7D7B3;
     font-size: 22px;
+}
+
+
+/* USER */
+
+#user {
+    padding: 50px 0;
+    background-color: #92657C;
+}
+
+#user .formu {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#user .formu h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#user .formu .campito{
+    color: #E7D7B3;
+    font-size: 22px;
+}
+
+
+#user .formu .campitoescr{
+    padding-left: 10px;
+    margin-bottom: 25px;
+    font-size: 22px;
+    border: none;
+    border-radius: .25rem;
+}
+
+
+#user img {
+    width: 200px;
+    border-radius: 100px;
+    margin-bottom: 50px;
+        -webkit-box-shadow: 0px 20px 0px 0px #E7D7B3;
+    -moz-box-shadow: 0px 20px 0px 0px #E7D7B3;
+    box-shadow: 0px 20px 0px 0px #E7D7B3;
+}
+
+#user .fotilla {
+    background-color: transparent;
+    font-size: 20px;
 }

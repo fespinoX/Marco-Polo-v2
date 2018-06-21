@@ -1,0 +1,7 @@
+Paquetes instalados:
+
+Laravel-stats (https://packalyst.com/packages/package/wnx/laravel-stats)
+
+Correr: php artisan stats
+Qué hace?: Cuantifica la magia detrás del proyecto
+

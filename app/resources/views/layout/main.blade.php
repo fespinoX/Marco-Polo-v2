@@ -26,7 +26,7 @@
         </ul>
         <ul class="navbar-nav ml-auto">
           @if(Auth::check())
-          <li class="nav-item righty">
+          <li class="nav-item notsorighty">
             <p>Hola, {{ Auth::user()->name }}!<a class="nav-link" href="{{ route('auth.logout') }}">Deslogueame</a></p>
           </li>
           <li class="nav-item righty">
@@ -41,7 +41,6 @@
           </li>          
           @endif
         </ul>
-
 
 
       </div>

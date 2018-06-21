@@ -8,6 +8,7 @@ use App\Models\Users;
 use Auth;
 use Storage;
 use Session;
+use Image;
 
 class AuthController extends Controller
 {
@@ -86,9 +87,8 @@ class AuthController extends Controller
             Session::put('rolusuario', true);
         }
 
-
-
 		return redirect()->intended('/index');
+
     }
 
     public function logout()
@@ -124,7 +124,20 @@ class AuthController extends Controller
         $inputData = $request->input();
 
         if($request->hasFile('foto')) {
-            $filepath = $request->file('foto')->store('img/profile');
+
+
+            $img = Image::make($request->file('foto'));
+            if($img->width() > $img->height()) {
+                $img->widen(300);
+            } else {
+                $img->heighten(300);
+            }
+
+
+            $filepath = $request->file('foto')->hashName('imgs');
+
+            Storage::put('img/' . $filepath, (string) $img->encode());
+
             $inputData['foto'] = $filepath;
         }
 
