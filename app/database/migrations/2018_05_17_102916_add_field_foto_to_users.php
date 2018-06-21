@@ -14,7 +14,7 @@ class AddFieldFotoToUsers extends Migration
     public function up()
     {
         Schema::table('users', function(Blueprint $table) {
-            $table->string('foto')->default('img/profile/none.jpg');            
+            $table->string('foto')->default('imgs/none.jpg');            
         });
     }
 
