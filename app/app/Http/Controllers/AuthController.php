@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Models\Users;
 use Auth;
+use Storage;
+use Session;
 
 class AuthController extends Controller
 {
@@ -17,12 +19,21 @@ class AuthController extends Controller
 
     public function doRegistro(Request $request)
     {
-        $request->validate([
-            'name' => 'required|min:2|max:100',
-            'email' => 'required|email|max:255|unique:users',
-            'planeta' => 'min:2|max:100',
-            'password' => 'required|min:4|confirmed',
+
+        $request->validate(Users::$rulesRegisterUser, [
+            'name.required'=>"No tenés nombre?", 
+            'name.min'=>"Este nombre es muy cortito, ponele al menos :min letritas", 
+            'name.max'=>"Nadie tiene un nombre taaan largo. Máximo :max letritas", 
+            'planeta.required'=>"De dónde venís?",
+            'planeta.min'=>"Este planeta es muy cortito, ponele al menos :min letritas", 
+            'planeta.max'=>"Nadie vive en un planeta taaan largo. Máximo :max letritas",
+            'email.required'=>"Poné tu mail, astro.",
+            'email.email'=>"Eso no estaría siendo un mail..",
+            'password.required'=>"Y la password?",
+            'password.min'=>"Ponele al menos :min letritas",
+            'password.confirmed'=>"Las contraseñas no coinciden.."
         ]);
+
 
         // Grabamos el usuario.
         // Primero, muy importante, tenemos que HASHEAR
@@ -45,10 +56,14 @@ class AuthController extends Controller
 
     public function doLogin(Request $request)
     {
-    	$request->validate([
-    		'email' => 'required|max:255',
-    		'password' => 'required|min:3',
-		]);
+
+        $request->validate(Users::$rulesLoginUser, [
+            'email.required'=>"Y el mail?", 
+            'email.max'=>"Ese mail es muy largo, creo que le pifiaste", 
+            'email.mail'=>"Eso no es un mail, corazón..",            
+            'password.required'=>"Y la password?", 
+            'password.min'=>"Esa password es muy cortita, ponele al menos :min letritas", 
+        ]);        
 
 
     	$input = $request->input();
@@ -64,18 +79,27 @@ class AuthController extends Controller
 		}
 
 
+
+//esto checkea el rol
+
+        if(Auth::user()->id_rol == 1){
+            Session::put('rolusuario', true);
+        }
+
+
+
 		return redirect()->intended('/index');
     }
 
     public function logout()
-    {
+    {   
+
+        // vacía el session para sacar el rolusuario ¯\_(ツ)_/¯
+        session()->flush();
+
     	Auth::logout();
     	return redirect('/index');
     }
-
-
-
-
 
 
     public function showPanel()
@@ -86,11 +110,12 @@ class AuthController extends Controller
 
     public function userEditar(Request $request, $id)
     {
-
+        //dd($inputData);
         $request->validate(Users::$rulesEditUser, [
             'name.required'=>"No tenés nombre?", 
             'name.min'=>"Este nombre es muy cortito, ponele al menos :min letritas", 
             'name.max'=>"Nadie tiene un nombre taaan largo. Máximo :max letritas", 
+            'planeta.required'=>"De dónde venís?",
             'planeta.min'=>"Este planeta es muy cortito, ponele al menos :min letritas", 
             'planeta.max'=>"Nadie vive en un planeta taaan largo. Máximo :max letritas",
             'foto.image'=>"Tiene que ser una foto, capo."
@@ -98,10 +123,30 @@ class AuthController extends Controller
 
         $inputData = $request->input();
 
-        Users::find($id)->update($inputData);
+        if($request->hasFile('foto')) {
+            $filepath = $request->file('foto')->store('img/profile');
+            $inputData['foto'] = $filepath;
+        }
+
+        $usuario = Users::find($id);
+        $imagen = $usuario->foto;
+
+        
+
+        $usuario->update($inputData);
+
+        
+        if ($imagen) {
+            Storage::delete($imagen);
+        }
 
         return back()->with('status', 'Listo, editaste tu perfil!');
     }
+
+
+
+
+
 
     
 }

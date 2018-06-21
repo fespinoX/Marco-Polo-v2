@@ -13,17 +13,23 @@ class Users extends Model
 	protected $fillable = [
         'name', 'planeta', 'foto',
     ];
+
+    public static $rulesLoginUser = [
+		'email' => 'required|max:255|email',
+    	'password' => 'required|min:3',
+	];
+
 	
 	public static $rulesRegisterUser = [
 		'name' => 'required|min:2|max:100',
-        'planeta' => 'min:2|max:100',
+		'planeta' => 'required|min:2|max:100',
+		'email' => 'required|email',
         'password' => 'required|min:4|confirmed',
-        'foto' => 'sometimes|image'
 	];
 
 	public static $rulesEditUser = [
 		'name' => 'required|min:2|max:100',
-        'planeta' => 'min:2|max:100',
+        'planeta' => 'required|min:2|max:100',
         'foto' => 'sometimes|image'
 	];
 

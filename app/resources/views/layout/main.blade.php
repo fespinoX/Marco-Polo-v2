@@ -57,5 +57,6 @@
       <p>¯\_(ツ)_/¯</p>
     </footer>-->
     <script src="<?= url('js/app.js');?>"></script>
+    <script src="<?= url('js/programitas.js');?>"></script>
   </body>
 </html>

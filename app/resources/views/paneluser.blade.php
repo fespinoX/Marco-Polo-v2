@@ -17,7 +17,7 @@ Marco Polo
     <div class="row justify-content-md-center">
       <div class="col-md-12">
         <h2>Mi usuario</h2>
-        <form action="<?= route('user.update', Auth::user()->id);?>" method="post" type="multipart/form-data">
+        <form action="<?= route('user.update', Auth::user()->id);?>" method="post" enctype="multipart/form-data">
           @csrf
           {{-- method_field('PUT') --}}
           @method('PUT')
@@ -28,8 +28,8 @@ Marco Polo
             @endif
 
             <label>Planeta:</label><input type="text" value="{{Auth::user()->planeta}}" name="planeta">
-            <img src="storage/img/profile/{{Auth::user()->foto}}" alt="foto usuario">
-            <input type="file">
+            <img id="fotoprev" src="storage/{{Auth::user()->foto}}" alt="foto usuario">
+            <input type="file" name="foto" id="fotosrc">
           </div>
 
           <input type="submit">

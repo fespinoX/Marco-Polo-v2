@@ -20,7 +20,7 @@ Marco Polo
         
         <a class="media pregunta pendiente" href="<?= url('preguntas/' . $singlePregunta->id_pregunta);?>">
           <div class="media-left">
-            <img src="{{ url('storage/img/profile/' . $singlePregunta->users->foto) }}" class="media-object">
+            <img src="{{ url('storage/' . $singlePregunta->users->foto) }}" class="media-object">
           </div>
           <div class="media-body">
             <h3>{{ $singlePregunta->users->name }}</h3>
@@ -39,7 +39,7 @@ Marco Polo
         @if ($singlePregunta->respondida == true)
         <a class="media pregunta respondida" href="<?= url('preguntas/' . $singlePregunta->id_pregunta);?>">
           <div class="media-left">
-            <img src="{{ url('storage/img/profile/' . $singlePregunta->users->foto) }}" class="media-object">
+            <img src="{{ url('storage/' . $singlePregunta->users->foto) }}" class="media-object">
           </div>
           <div class="media-body">
             <h3>{{ $singlePregunta->users->name }}</h3>

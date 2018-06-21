@@ -55,8 +55,6 @@ Route::get('/preguntas', [
 	]);
 
 
-
-
 Route::middleware('auth')->group(function() {
 
 Route::get('/paneluser', [
@@ -85,7 +83,13 @@ Route::get('/preguntas/{id_pregunta}', 'PreguntasController@detallepregunta');
 
 Route::get('/preguntas/{id}', 'PreguntasController@detallepregunta');
 
-	Route::get('/preguntas/{id}/editar', [
+
+});
+
+
+Route::middleware('rolusuario')->group(function() {
+
+Route::get('/preguntas/{id}/editar', [
 		'as' => 'preguntas.formEditar',
 		'uses' => 'PreguntasController@formEditar',
 	]);
@@ -106,5 +110,4 @@ Route::get('/preguntas/{id}', 'PreguntasController@detallepregunta');
 		'uses' => 'PreguntasController@eliminar',
 	]);
 
-
-	});
+});

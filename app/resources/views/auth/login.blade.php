@@ -14,7 +14,7 @@ Iniciar Sesión
 				<form action="{{ route('auth.doLogin') }}" method="post">
 					@csrf
 					<div class="form-group">
-						<label for="email">Usuario: </label>
+						<label for="email">Mail: </label>
 						<input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control">
 						@if($errors->has('email'))
 						<div class="alert alert-danger">{{ $errors->first('email') }}</div>
