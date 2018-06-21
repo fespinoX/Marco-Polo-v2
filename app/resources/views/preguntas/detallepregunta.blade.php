@@ -10,7 +10,7 @@ Pregunta {{ $pregunta->pregunta }}
 	<div class="container-fluid">
 		<div class="row justify-content-md-center">
 			<div class="col-md-6 text-center">
-				<img src="{{ url('storage/' . $pregunta->users->foto) }}" class="media-object">
+				<img src="{{ url('storage/img/' . $pregunta->users->foto) }}" class="media-object">
 				<p class="nombre">- {{ $pregunta->users->name }}</p>
 				<p class="badge">{{ $pregunta->categorias->categoria }}</p>
 				<p>Planeta: {{ $pregunta->users->planeta }}</p>				

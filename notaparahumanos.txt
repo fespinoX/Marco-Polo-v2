@@ -1,7 +1,40 @@
+
+Traducción:
+Este sitio está todo en marciano, el cual es un idioma muy similar al español, sólo que más informal y sus tildes se escriben con subrayado.
+
+¯\_(ツ)_/¯
+
+Niveles de usuario:
+El usuario kodos tiene acceso al panel de respuesta y borrado de una pregunta, el resto de los usuarios pueden agregar preguntas.
+
+¯\_(ツ)_/¯
+
 Paquetes instalados:
 
+-------
 Laravel-stats (https://packalyst.com/packages/package/wnx/laravel-stats)
 
 Correr: php artisan stats
+
 Qué hace?: Cuantifica la magia detrás del proyecto
 
+
+--------
+GIT Info (https://packalyst.com/packages/package/hnhdigital-os/laravel-git-info)
+
+Correr: 
+<?php
+//esto es para saber cuantos commits hice:
+// echo Git::commits();
+//esto es para saber el branch:
+// echo Git::branch();
+?>
+(Lo dejé comentado en index.blade.php)
+
+Qué hace?: Te tira la info del GIT (ideal para colgados como yo)
+
+
+-------
+Laravel Blade Minify (https://packalyst.com/packages/package/renatomarinho/laravel-blade-minify)
+
+Qué hace?: Mimifica el blade del sitio.

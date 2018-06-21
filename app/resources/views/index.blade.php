@@ -21,6 +21,10 @@ Marco Polo
 </section>
 @stop
 
+
 <?php
-echo Git::commits();
+//esto es para saber cuantos commits hice:
+// echo Git::commits();
+//esto es para saber el branch:
+// echo Git::branch();
 ?>
