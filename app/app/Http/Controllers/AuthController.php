@@ -44,9 +44,9 @@ class AuthController extends Controller
         $input['password'] = \Hash::make($input['password']);
         $user = User::create($input);
 
-        return redirect('/index')
+        return redirect('/login')
             //->route('auth.showLogin')
-            ->with('status', 'Usuario registrado con éxito!');
+            ->with('status', 'Ya estás registrado, astro! ahora logueate ;)');
     }
 
 

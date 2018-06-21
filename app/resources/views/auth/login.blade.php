@@ -9,7 +9,7 @@ Iniciar Sesión
 			<div class="col-sm-6 login">
 				<h2>Log in</h2>
 				@if(Session::has('status'))
-				<div class="alert alert-danger">{{ Session::get('status') }}</div>
+				<div class="alert alert-warning">{{ Session::get('status') }}</div>
 				@endif
 				<form action="{{ route('auth.doLogin') }}" method="post">
 					@csrf
