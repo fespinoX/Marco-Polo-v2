@@ -21,6 +21,16 @@ Pregunta {{ $pregunta->pregunta }}
 				<a class="btn btn-primario" href="<?= route('preguntas.formEditar', ['id' => $pregunta->id_pregunta]);?>">Responder</a>
 				<a class="btn btn-danger" href="<?= route('preguntas.confirmarEliminar', ['id' => $pregunta->id_pregunta]);?>">Eliminar</a>
 				@endif
+
+				<ul>
+					@foreach($comentarios as $singleComentario)
+					<li>
+						<p>Usuario: <span></span></p>
+						<p>Comentario: {{ $singleComentario->comentario }}</p>
+						<p></p>
+					</li>
+					@endforeach
+				</ul>
 				
 			</div>
 		</div>

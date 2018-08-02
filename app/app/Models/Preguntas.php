@@ -24,7 +24,11 @@ class Preguntas extends Model
     public function users()
     {
         return $this->belongsTo(Users::class, 'id', 'id');
-    }    
+    }
+
+    public function comentarios(){
+        return $this->hasMany(Comentarios::class, 'id_pregunta', 'id_pregunta');
+    }   
 }
 
 
