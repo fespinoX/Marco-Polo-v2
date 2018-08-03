@@ -23,14 +23,21 @@ Pregunta {{ $pregunta->pregunta }}
 				@endif
 
 				<ul>
+<<<<<<< HEAD
 					@foreach($pregunta->comentarios as $singleComentario)
 					<li>
 						<p>Usuario: <span>{{ $singleComentario->usuario->name }}</span></p>
+=======
+					@foreach($comentarios as $singleComentario)
+					<li>
+						<p>Usuario: <span></span></p>
+>>>>>>> origin/master
 						<p>Comentario: {{ $singleComentario->comentario }}</p>
 						<p></p>
 					</li>
 					@endforeach
 				</ul>
+<<<<<<< HEAD
 				<form action="{{ route('preguntas.comentarios', ['id' => $pregunta->id_pregunta]) }}" method="post">
 					@csrf
 					@method('PUT')
@@ -41,6 +48,8 @@ Pregunta {{ $pregunta->pregunta }}
 						<button class="">Comentar</button>
 					</div>
 				</form>
+=======
+>>>>>>> origin/master
 				
 			</div>
 		</div>

@@ -18,9 +18,12 @@ class Comentarios extends Model
 	public function preguntas(){
 		return $this->belongsTo(Preguntas::class, 'id_pregunta', 'id_pregunta' );
 	}
+<<<<<<< HEAD
 
 	public function usuario(){
 		return $this->belongsTo(Users::class, 'id_user', 'id' );
 	}	
+=======
+>>>>>>> origin/master
 	
 }

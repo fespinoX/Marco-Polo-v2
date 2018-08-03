@@ -23,6 +23,7 @@ class ComentariosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function create(Request $request, $id)
     {
         $inputData = $request->all();
@@ -38,6 +39,11 @@ class ComentariosController extends Controller
 
         Comentarios::create($inputData);
         return back()->with('status', 'El comentario se guardó correctamente');
+=======
+    public function create()
+    {
+        //
+>>>>>>> origin/master
     }
 
     /**
