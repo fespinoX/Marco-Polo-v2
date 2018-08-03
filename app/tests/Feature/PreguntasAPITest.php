@@ -20,7 +20,6 @@ class PreguntasAPITest extends TestCase
 	}
 
 
-
     /**
      * A basic test example.
      *
