@@ -74,6 +74,12 @@ Route::middleware('auth')->group(function() {
 
 	Route::get('/preguntas/{id}', 'PreguntasController@detallepregunta');
 
+	Route::put('/preguntas/{pregunta}/comentarios', [
+		'as' => 'preguntas.comentarios',
+		'uses' => 'ComentariosController@create',
+	]);
+
+
 
 	Route::middleware('rolusuario')->group(function() {
 

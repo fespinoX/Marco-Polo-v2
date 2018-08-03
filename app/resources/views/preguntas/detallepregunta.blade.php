@@ -21,6 +21,26 @@ Pregunta {{ $pregunta->pregunta }}
 				<a class="btn btn-primario" href="<?= route('preguntas.formEditar', ['id' => $pregunta->id_pregunta]);?>">Responder</a>
 				<a class="btn btn-danger" href="<?= route('preguntas.confirmarEliminar', ['id' => $pregunta->id_pregunta]);?>">Eliminar</a>
 				@endif
+
+				<ul>
+					@foreach($pregunta->comentarios as $singleComentario)
+					<li>
+						<p>Usuario: <span>{{ $singleComentario->usuario->name }}</span></p>
+						<p>Comentario: {{ $singleComentario->comentario }}</p>
+						<p></p>
+					</li>
+					@endforeach
+				</ul>
+				<form action="{{ route('preguntas.comentarios', ['id' => $pregunta->id_pregunta]) }}" method="post">
+					@csrf
+					@method('PUT')
+
+					<textarea type="text" name="comentario" cols="30" rows="10" placeholder="Tenés algo para decir?" value="{{ old('comentario') }}"></textarea>
+
+					<div class="col">
+						<button class="">Comentar</button>
+					</div>
+				</form>
 				
 			</div>
 		</div>
