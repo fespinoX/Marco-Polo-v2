@@ -14,7 +14,7 @@ class LinkIdUsersToPreguntas extends Migration
     public function up()
     {
         Schema::table('preguntas', function(Blueprint $table){
-            $table -> unsignedInteger('id');
+            $table -> unsignedInteger('id')->nullable();
             $table -> foreign('id')->references('id')->on('users');
         });
     }

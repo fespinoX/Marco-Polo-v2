@@ -10,34 +10,55 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class PreguntasTest extends TestCase
 {
+
+     use RefreshDatabase;
+
     /**
      * A basic test example.
      *
      * @return void
      */
+    
     public function testBasicTest()
     {
         $this->assertTrue(true);
     }
 
-    public function testRutas()
-    {        
-    	$this->get('/index')
-			->assertStatus(200)
-			->assertSee('Soy el index');
+    public function testRutaSeeIndex()
+    {   
 
-		$this->get('/preguntas')
-			->assertStatus(200)
-			->assertSee('Preguntas pendientes');
-		
-		$this->get('/registrarse')
-			->assertStatus(200)
-			->assertSee('Soy nuevo!');
-
-		$this->get('/login')
-			->assertStatus(200)
-			->assertSee('Log in');
+        $response = $this->get('/index');
+        $response
+            ->assertStatus(200)
+            ->assertSee('Soy el index');
     }
+
+    public function testRutaSeeRegistrarse()
+    {   
+
+        $response = $this->get('/registrarse');
+        $response
+            ->assertStatus(200)
+            ->assertSee('Soy nuevo!');
+    }
+
+    public function testRutaSeeLogin()
+    {   
+
+        $response = $this->get('/login');
+        $response
+            ->assertStatus(200)
+            ->assertSee('Log in');
+    }
+
+    public function testRutaPreguntas()
+    {   
+
+        $response = $this->get('/preguntas');
+        $response
+            ->assertStatus(200);
+    }
+    
 
     public function testVariable()
     {        

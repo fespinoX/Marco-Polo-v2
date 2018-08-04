@@ -14,7 +14,7 @@ class LinkIdCategoriasToPreguntas extends Migration
     public function up()
     {
         Schema::table('preguntas', function(Blueprint $table){
-            $table -> unsignedInteger('id_categoria');
+            $table -> unsignedInteger('id_categoria')->nullable();
             $table -> foreign('id_categoria')->references('id_categoria')->on('categorias');
         });
     }

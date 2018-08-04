@@ -15,7 +15,6 @@ class PreguntasAPITest extends TestCase
 	{
 		parent::setUp();
 
-		$this->artisan('migrate:fresh');
 		$this->artisan('db:seed');
 	}
 
