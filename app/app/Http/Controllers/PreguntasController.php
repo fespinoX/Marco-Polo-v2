@@ -12,15 +12,12 @@ use App\Repositories\Contracts\PreguntasRepository;
 
 class PreguntasController extends Controller
 {
-    /** @var PeliculaRepository */
+    /** @var PreguntaRepository */
     protected $repo;
 
     /**
-     * Le pedimos a Laravel que nos inyecte el repo
-     * que registramos en el inyector de dependencias
-     * en el método register de AppServiceProvider.
      *
-     * @param PeliculaRepository $repo
+     * @param PreguntaRepository $repo
      */
     public function __construct(PreguntasRepository $repo)
     {

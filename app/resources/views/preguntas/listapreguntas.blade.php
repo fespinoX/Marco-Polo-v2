@@ -9,8 +9,15 @@ Marco Polo
 //dd(Auth::user()->id_rol);
 ?>
 @section('contenido')
+
+
 <section id="preguntas">
   <div class="container-fluid">
+
+@if(Session::has('status'))
+    <div class="alert alert-success">{{ Session::get('status') }}</div>
+  @endif
+
     <div class="row justify-content-md-center">
       <div class="col-md-8 text-left">
         <h2>Preguntas pendientes</h2>

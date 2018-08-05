@@ -13,16 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-/*Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});*/
-
-// Todas las rutas que definamos acá, van a automáticamente tener prefijado
-// la url "/api".
-// Es decir, si definimos una ruta "/saraza", la ruta final es "/api/saraza".
-// Route::get('/peliculas', 'PeliculasApiController@listar');
 Route::get('/preguntas', 'API\PreguntasController@listar');
 
 Route::get('/preguntas/{id}', 'API\PreguntasController@ver');
 
 Route::post('/preguntas', 'API\PreguntasController@crear');
+
+Route::delete('/preguntas/{id}', 'API\PreguntasController@borrar');

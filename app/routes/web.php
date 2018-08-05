@@ -79,6 +79,18 @@ Route::middleware('auth')->group(function() {
 		'uses' => 'ComentariosController@create',
 	]);
 
+	Route::get('/preguntas/{id}/eliminarcomentario', [
+		'as' => 'preguntas.confirmarEliminarComentario',
+		'uses' => 'ComentariosController@confirmarEliminarComentario',
+	]);
+
+
+	Route::delete('/preguntas/{id}/eliminarcomentario', [
+		'as' => 'preguntas.eliminarcomentario',
+		'uses' => 'ComentariosController@eliminar',
+	]);
+
+
 
 
 	Route::middleware('rolusuario')->group(function() {

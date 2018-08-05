@@ -78,6 +78,7 @@ textarea {
     resize: none;
     border: none;
     border-radius: .25rem;
+    padding: 10px;
 }
 
 .campito {
@@ -148,6 +149,17 @@ textarea {
     margin-top: 50px;
     font-size: 30px;
     color: #EFB247;
+}
+
+.btn-index {
+    background-color: #EFB247;
+    color: #038D80;
+}
+
+.btn-index:hover,
+.btn-index:active {
+    background-color: #e0a131;
+    color: #06756b;
 }
 
 /* LOG IN */
@@ -290,6 +302,34 @@ textarea {
     font-size: 30px;
     color: #E7D7B3;
 }
+
+.comentario-title {
+    font-size: 28px;
+    text-align: center;
+    padding: 50px 0 20px 0;
+    color: #E7D7B3;
+}
+
+.comentarios {
+    list-style: none;
+    padding: 0; 
+}
+
+.comentarios li {
+    margin-bottom: 40px;
+}
+
+
+.comentario {
+    font-size: 20px;
+}
+
+.comentario-user {
+    font-size: 18px;
+    color: #E7D7B3;
+}
+
+
 
 
 /* EDIT */

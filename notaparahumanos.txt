@@ -5,7 +5,9 @@ Este sitio está todo en marciano, el cual es un idioma muy similar al español,
 ¯\_(ツ)_/¯
 
 Niveles de usuario:
-El usuario kodos tiene acceso al panel de respuesta y borrado de una pregunta, el resto de los usuarios pueden agregar preguntas.
+El usuario kodos tiene acceso al panel de respuesta, editado y borrado de una pregunta.
+Sólo los usuarios que NO son Todos pueden hacer preguntas.
+
 
 ¯\_(ツ)_/¯
 

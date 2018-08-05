@@ -11,26 +11,19 @@ class PreguntasController extends Controller
     public function listar()
     {
     	$preguntas = Preguntas::all();
-
-    	// Retornamos el JSON.
     	return response()->json($preguntas);
     }
 
     public function ver($id)
     {
-    	// Buscamos la película por su id.
     	$preguntas = Preguntas::find($id);
-
     	return response()->json($preguntas);
     }
 
     public function crear(Request $request)
     {
     	$inputData = $request->all();
-
-    	// Validación...
 		$request->validate(Preguntas::$rules);
-
     	$preguntas = Preguntas::create($inputData);
 
     	return response()->json([
@@ -38,4 +31,12 @@ class PreguntasController extends Controller
     		'data' => $preguntas
 		]);
     }
+
+    public function borrar($id)
+    {
+        $preguntas = Preguntas::find($id);
+        $preguntas->delete();
+        return response()->json($preguntas);
+    }
 }
+

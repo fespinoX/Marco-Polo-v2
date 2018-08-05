@@ -23,6 +23,13 @@
           <li class="nav-item">
             <a class="nav-link" href="<?= url('preguntas');?>">Preguntas</a>
           </li>
+          @if(Auth::check())
+          @if(Auth::user()->id_rol == 2)
+          <li class="nav-item">
+            <a class="nav-link" href="<?= url('preguntas/nueva');?>">Nueva pregunta</a>
+          @endif
+          @endif
+          </li>
         </ul>
         <ul class="navbar-nav ml-auto">
           @if(Auth::check())

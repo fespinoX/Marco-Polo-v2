@@ -97,4 +97,12 @@ class PreguntasAPITest extends TestCase
 			->assertJsonValidationErrors(['pregunta']);
     }
 
+    public function testDeletePreguntaX()
+    {
+        $response = $this->json('DELETE', '/api/preguntas/1');
+
+        $response->assertStatus(200)->assertJson([
+            'pregunta' => 'Hay suficiente dinero para financiar un viaje a la costa este de la galaxia Neymar?'
+        ]);
+    }    
 }
